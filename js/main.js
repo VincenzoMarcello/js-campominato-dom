@@ -8,13 +8,8 @@ const selectDifficulty = document.getElementById("difficulty");
 let grid = document.getElementById("grid");
 
 //* DICHIARO ARRAY VUOTO
-const bombs = [];
-while (bombs.length < 16) {
-  const randomBombs = generateRandomNumber(1, 100);
-  if (!bombs.includes(randomBombs)) {
-    bombs.push(randomBombs);
-  }
-}
+let bombs = [];
+
 console.log(bombs);
 
 //* PUNTEGGIO
@@ -22,20 +17,24 @@ let score = 0;
 
 //* AL CLICK GENERA LA GRIGLIA
 playButton.addEventListener("click", function () {
-  //* RESET PUNTEGGIO
-  score = 0;
-
-  //* NUMERO DI CELLE IN BASE ALLA DIFFICOLTA'
-  let cellsTotal = 100;
-
-  if (selectDifficulty.value == 2) {
-    cellsTotal = 81;
-  } else if (selectDifficulty.value == 3) {
-    cellsTotal = 49;
-  }
-
-  grid.innerHTML = "";
-  generateGrid(cellsTotal);
+  reset();
+  // //* RESET PUNTEGGIO
+  // score = 0;
+  // //* NUMERO DI CELLE IN BASE ALLA DIFFICOLTA'
+  // let cellsTotal = 100;
+  // if (selectDifficulty.value == 2) {
+  //   cellsTotal = 81;
+  // } else if (selectDifficulty.value == 3) {
+  //   cellsTotal = 49;
+  // }
+  // while (bombs.length < 16) {
+  //   const randomBombs = generateRandomNumber(1, cellsTotal);
+  //   if (!bombs.includes(randomBombs)) {
+  //     bombs.push(randomBombs);
+  //   }
+  // }
+  // grid.innerHTML = "";
+  // generateGrid(cellsTotal);
 });
 
 //! FUNZIONI
@@ -62,6 +61,7 @@ function generateCell(index, cellsTotal) {
     if (bombs.includes(index)) {
       cell.classList.add("red");
       alert("BOOOM!!! Il tuo punteggio è " + score);
+      gameOver();
     } else {
       cell.classList.add("azure");
       score++;
@@ -73,4 +73,32 @@ function generateCell(index, cellsTotal) {
 function generateRandomNumber(min, max) {
   const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
   return randomNumber;
+}
+
+function gameOver() {
+  reset();
+}
+
+function reset() {
+  bombs = [];
+
+  //* RESET PUNTEGGIO
+  score = 0;
+
+  //* NUMERO DI CELLE IN BASE ALLA DIFFICOLTA'
+  let cellsTotal = 100;
+
+  if (selectDifficulty.value == 2) {
+    cellsTotal = 81;
+  } else if (selectDifficulty.value == 3) {
+    cellsTotal = 49;
+  }
+  while (bombs.length < 16) {
+    const randomBombs = generateRandomNumber(1, cellsTotal);
+    if (!bombs.includes(randomBombs)) {
+      bombs.push(randomBombs);
+    }
+  }
+  grid.innerHTML = "";
+  generateGrid(cellsTotal);
 }
