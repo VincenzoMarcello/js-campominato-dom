@@ -75,10 +75,7 @@ function generateRandomNumber(min, max) {
   return randomNumber;
 }
 
-function gameOver() {
-  reset();
-}
-
+//* FUNZIONE DI RESET
 function reset() {
   bombs = [];
 
@@ -101,4 +98,9 @@ function reset() {
   }
   grid.innerHTML = "";
   generateGrid(cellsTotal);
+}
+
+//* FUNZIONE DI GAME OVER
+function gameOver() {
+  reset();
 }
