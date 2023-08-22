@@ -22,6 +22,9 @@ let score = 0;
 
 //* AL CLICK GENERA LA GRIGLIA
 playButton.addEventListener("click", function () {
+  //* RESET PUNTEGGIO
+  score = 0;
+
   //* NUMERO DI CELLE IN BASE ALLA DIFFICOLTA'
   let cellsTotal = 100;
 
