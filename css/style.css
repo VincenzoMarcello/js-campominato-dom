@@ -2,7 +2,7 @@
   width: 800px;
   height: 800px;
   margin: auto;
-  background-color: blueviolet;
+  background-color: rgb(118, 113, 122);
   display: flex;
   flex-wrap: wrap;
 }
