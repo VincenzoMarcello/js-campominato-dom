@@ -61,3 +61,4 @@ Quindi:
 - Al click della cella
   - **SE** è un numero presente nell'array quindi una bomba esplode e compare un alert
   - **ALTRIMENTI** compare lo sfondo blu e continua il gioco
+  - aggiungo un contatore del punteggio con una variabile che parte da 0
