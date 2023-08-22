@@ -24,11 +24,19 @@
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand fw-bolder">Campo Minato</a>
-        <button class="btn btn-outline-success" id="play-button">Play</button>
+        <div class="d-flex">
+          <select class="form-select me-2" id="difficulty">
+            <option>Scegli la difficoltà</option>
+            <option value="1">Facile</option>
+            <option value="2">Medio</option>
+            <option value="3">Difficile</option>
+          </select>
+          <button class="btn btn-outline-success" id="play-button">Play</button>
+        </div>
       </div>
     </nav>
 
     <!-- MAIN -->
-    <main id="grid"></main>
+    <main class="mt-5" id="grid"></main>
   </body>
 </html>

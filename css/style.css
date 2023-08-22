@@ -16,6 +16,18 @@
   align-items: center;
 }
 
+.cell-81 {
+  width: calc(100% / 9);
+}
+
+.cell-49 {
+  width: calc(100% / 7);
+}
+
 .azure {
-  background-color: azure;
+  background-color: #0668fc;
+}
+
+.red {
+  background-color: #ff0000;
 }
