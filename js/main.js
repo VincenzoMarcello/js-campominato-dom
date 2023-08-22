@@ -17,6 +17,9 @@ while (bombs.length < 16) {
 }
 console.log(bombs);
 
+//* PUNTEGGIO
+let score = 0;
+
 //* AL CLICK GENERA LA GRIGLIA
 playButton.addEventListener("click", function () {
   //* NUMERO DI CELLE IN BASE ALLA DIFFICOLTA'
@@ -55,9 +58,10 @@ function generateCell(index, cellsTotal) {
   cell.addEventListener("click", function () {
     if (bombs.includes(index)) {
       cell.classList.add("red");
-      alert("BOOOM!!!");
+      alert("BOOOM!!! Il tuo punteggio è " + score);
     } else {
       cell.classList.add("azure");
+      score++;
     }
   });
 }
